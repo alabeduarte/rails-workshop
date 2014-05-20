@@ -15,9 +15,9 @@ describe AttendeesController, :type => :controller do
   end
 
   describe "POST #create" do
-    it "should redirect to /new after create" do
+    it "should assign created attendee" do
       post :create, name: "John Doe"
-      expect(response).to redirect_to '/new'
+      expect(assigns(:attendee)).to eq(Attendee.new(name: 'John Doe'))
     end
   end
 end
