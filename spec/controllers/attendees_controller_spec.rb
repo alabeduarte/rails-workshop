@@ -13,4 +13,11 @@ describe AttendeesController, :type => :controller do
       expect(response).to render_template("new")
     end
   end
+
+  describe "POST #create" do
+    it "should redirect to /new after create" do
+      post :create, name: "John Doe"
+      expect(response).to redirect_to '/new'
+    end
+  end
 end

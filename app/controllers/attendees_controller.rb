@@ -4,6 +4,7 @@ class AttendeesController < ApplicationController
   end
 
   def create
+    redirect_to '/new'
   end
 
 end
