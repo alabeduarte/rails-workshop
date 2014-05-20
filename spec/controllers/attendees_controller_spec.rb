@@ -36,4 +36,20 @@ describe AttendeesController, :type => :controller do
       expect(assigns :attendee).to eq Attendee.first
     end
   end
+
+  describe "GET #index" do
+    before(:each) do
+      Attendee.create(name: "Batman")
+      Attendee.create(name: "Robin")
+    end
+
+    it "should assign attendees list" do
+      get :index
+
+      attendees = Attendee.all
+      batman = attendees[0]
+      robin = attendees[1]
+      expect(assigns :attendees).to eq [batman, robin]
+    end
+  end
 end
