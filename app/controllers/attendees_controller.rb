@@ -1,13 +1,16 @@
 class AttendeesController < ApplicationController
 
   def new
+    @attendee = Attendee.new
   end
 
   def create
     @attendee = Attendee.new attendee_params
-
-    @attendee.save
-    redirect_to @attendee
+    if @attendee.save
+      redirect_to @attendee
+    else
+      render 'new'
+    end
   end
 
   def show
