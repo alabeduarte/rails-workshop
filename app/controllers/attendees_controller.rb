@@ -10,6 +10,10 @@ class AttendeesController < ApplicationController
     redirect_to @attendee
   end
 
+  def show
+    @attendee = Attendee.find(params[:id])
+  end
+
   private
   def attendee_params
     params.require(:attendee).permit(:name)

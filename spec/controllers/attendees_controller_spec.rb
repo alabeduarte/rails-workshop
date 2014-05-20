@@ -32,7 +32,7 @@ describe AttendeesController, :type => :controller do
     before(:each) { Attendee.create(name: "John Doe") }
 
     it "should assign attendee" do
-      post :show, id: 1
+      get :show, id: 1
       expect(assigns :attendee).to eq Attendee.first
     end
   end
