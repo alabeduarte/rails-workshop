@@ -39,8 +39,7 @@ describe AttendeesController, :type => :controller do
 
   describe "GET #index" do
     before(:each) do
-      Attendee.create(name: "Batman")
-      Attendee.create(name: "Robin")
+      allow(Attendee).to receive(:all).and_return([{name: "Batman"}, {name: "Robin"}])
     end
 
     it "should assign attendees list" do
