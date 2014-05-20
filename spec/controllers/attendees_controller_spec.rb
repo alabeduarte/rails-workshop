@@ -15,6 +15,11 @@ describe AttendeesController, :type => :controller do
   end
 
   describe "POST #create" do
+    it "should not allow create attendee with empty name" do
+      post :create, attendee: { name: nil }
+      expect(assigns(:attendee).errors.messages).to eq name: ["can't be blank"]
+    end
+
     it "should assign created attendee" do
       post :create, attendee: { name: "John Doe" }
       expect(assigns :attendee).to eq Attendee.first
