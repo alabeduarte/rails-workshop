@@ -4,7 +4,10 @@ class AttendeesController < ApplicationController
   end
 
   def create
-    redirect_to '/new'
+    @attendee = Attendee.new(params[:attendee])
+
+    @attendee.save
+    redirect_to @attendee
   end
 
 end
