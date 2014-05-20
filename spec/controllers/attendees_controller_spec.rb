@@ -16,8 +16,8 @@ describe AttendeesController, :type => :controller do
 
   describe "POST #create" do
     it "should assign created attendee" do
-      post :create, name: "John Doe"
-      expect(assigns(:attendee)).to eq(Attendee.first)
+      post :create, attendee: { name: "John Doe" }
+      expect(assigns :attendee).to eq Attendee.first
     end
   end
 end
