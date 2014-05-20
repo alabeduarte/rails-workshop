@@ -27,4 +27,13 @@ describe AttendeesController, :type => :controller do
       expect(response).to redirect_to "/attendees/#{attendee.id}"
     end
   end
+
+  describe "GET #show" do
+    before(:each) { Attendee.create(name: "John Doe") }
+
+    it "should assign attendee" do
+      post :show, id: 1
+      expect(assigns :attendee).to eq Attendee.first
+    end
+  end
 end
