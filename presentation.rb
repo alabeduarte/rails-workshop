@@ -251,3 +251,51 @@ $ rails generate model Attendee name:string
 
 
 $ rake db:migrate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> DEPLOY
+  heroku apps:create
+    -> http://guarded-wave-4347.herokuapp.com/
